@@ -29,6 +29,12 @@ p{
 .bg-white{
     background-color: $textLightColor !important;
 }
+.bg-primary{
+    background-color: $primaryColor !important;
+}
+.bg-primary-light{
+    background-color: $primaryLightColor !important;
+}
 // Boxshadow colors
 .shadow{
     box-shadow: $primaryShadow !important;
@@ -75,6 +81,9 @@ p{
 }
 .d-block{
     display: block !important;
+}
+.d-inline{
+    display: inline !important;
 }
 
 // for flex properties
