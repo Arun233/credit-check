@@ -12,6 +12,35 @@ p{
     line-height: 1.5 !important;
 }
 
+// Text colors
+.text-white{
+    color: $textLightColor !important;
+}
+.text-dark{
+    color: $secondaryColor !important;
+}
+.text-primary{
+    color: $primaryColor !important;
+}
+.text-primary-light{
+    color: $primaryLightColor !important;
+}
+// Background colors
+.bg-white{
+    background-color: $textLightColor !important;
+}
+// Boxshadow colors
+.shadow{
+    box-shadow: $primaryShadow !important;
+}
+.shadow-sm{
+    box-shadow: $secondaryShadow !important;
+}
+// Borders
+.border-bottom{
+    border-bottom: $borderBottom !important;
+}
+
 .pusher-desktop{
     transform:unset !important;
     margin-left: 170px !important;
