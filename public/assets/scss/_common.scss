@@ -30,3 +30,16 @@
         background-color: $primaryColor;
     }
 }
+
+.PageSub-title{
+    position: relative;
+    &:before{
+      content: '';
+      height: 25px;
+      top: -10px;
+      width: 1px ;
+      background-color: #fff ;
+      position: absolute;
+      left: 0;
+    }
+}
