@@ -17,13 +17,19 @@ p{
     color: $textLightColor !important;
 }
 .text-dark{
-    color: $secondaryColor !important;
+    color: $black !important;
 }
 .text-primary{
     color: $primaryColor !important;
 }
 .text-primary-light{
     color: $primaryLightColor !important;
+}
+.text-gray{
+    color: $greyColor !important;
+}
+.text-red{
+    color: $redColor !important;
 }
 // Background colors
 .bg-white{

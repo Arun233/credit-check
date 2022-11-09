@@ -6,4 +6,27 @@
  #sidebar{
     width: 170px !important;
     z-index: 9999 !important;
+
+    // .active.item{
+    //     background: transparent !important;
+    //     color: $primaryColor !important;
+    //     svg{
+    //         path{
+    //             fill: $primaryColor !important;
+    //         }
+    //     }
+    // }
+}
+
+#mainContent{
+    position: relative;
+    &:before{
+        content: '';
+        z-index: -1;
+        width: 100%;
+        top: 45px;
+        height: 200px;
+        position: absolute;
+        background-color: $primaryColor;
+    }
 }

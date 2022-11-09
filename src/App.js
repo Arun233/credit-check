@@ -1,5 +1,6 @@
 import { useEffect,useState } from "react";
 import { Route, Routes } from "react-router-dom";
+import HeaderComponent from "./app/components/HeaderComponent";
 import SidebarComponent from "./app/components/SidebarComponent";
 import Dashboard from "./app/pages/Dashboard";
 import Integration from "./app/pages/Integration";
@@ -18,7 +19,9 @@ function App() {
   return (                
                    <>
                    <SidebarComponent width={mobileWidth} sidebar={sidebar} showSidebar={ShowSidebar}/>
-                          <div className={` pusher ${mobileWidth>980 && 'pusher-desktop '} `} id='mainContent'>  
+                          <div className={` pusher ${mobileWidth>980 && 'pusher-desktop '} `} id='mainContent'> 
+                          <HeaderComponent width={mobileWidth} sidebar={sidebar}  showSidebar={ShowSidebar} />
+                           <div className=''>
                             <Routes>
                               <Route path='/' element={<Dashboard/>}/>
                               <Route path='/tenants' element={<Tenants/>}/>
@@ -26,6 +29,7 @@ function App() {
                               <Route path='/reports' element={<Reports/>}/>
                               <Route path='/settings' element={<Settings/>}/>
                             </Routes>
+                            </div>
                           </div>    
                           </>
   );
