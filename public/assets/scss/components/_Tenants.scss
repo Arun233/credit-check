@@ -1,0 +1,18 @@
+.tenantsTable{
+    @include for-mobile{
+        width: 100% !important;
+        overflow-x: scroll !important;
+    }
+    table{
+        tr{
+            border-bottom: $borderBottom;
+        }
+        th{
+            font-weight: 600;
+            padding: 2em 1em;
+        }
+        td{
+            padding: 1em 1em;
+        }
+    }
+}
