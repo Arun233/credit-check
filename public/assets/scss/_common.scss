@@ -1,6 +1,10 @@
 // for semantic date picker
 .datePicker .field{
     display: block !important;
+    i{
+        color: $primaryColor;
+        opacity: 1 !important;
+    }
  }
 //  for sidebar
  #sidebar{
@@ -30,16 +34,51 @@
         background-color: $primaryColor;
     }
 }
-
 .PageSub-title{
     position: relative;
     &:before{
       content: '';
       height: 25px;
-      top: -10px;
+      top: -4px;
       width: 1px ;
       background-color: #fff ;
       position: absolute;
       left: 0;
+    }
+}
+.pagination-div{
+    .ui.menu{
+        background-color: transparent !important;
+        border: 0 !important;
+        box-shadow: none !important;
+        .item{
+            transition: unset !important;
+            min-width: 0em;
+            margin: 0.7rem !important;
+            padding: 0 !important;
+            &::before{
+                display: none;
+            }
+            &:hover{
+                color: $primaryColor;
+                background-color: transparent !important;
+            }
+            @include for-mobile{
+                margin: 0.6rem !important;
+            }
+        }
+        .item.active{
+            height: 1.5rem;
+            width: 1.5rem;
+            justify-content: center !important;
+            color: $textLightColor;
+            background-color: $primaryColor !important;
+            border-radius: 50%;
+        }
+    }
+}
+@include for-mobile{
+    #SignicatINtegrationTable{
+        min-width: 770px !important;
     }
 }
