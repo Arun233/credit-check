@@ -1,18 +1,70 @@
+
+.tenants-table-div{
+    .show-entry{
+        border: $borderBottom;
+        background-color: $textLightColor;
+    }
+    .ui.input{
+        input{
+            border: 1px solid $primaryLightColor !important;
+        }
+        i{
+            color: $primaryLightColor;
+            opacity: 1 !important;
+        }
+    }
 .tenantsTable{
     @include for-mobile{
         width: 100% !important;
         overflow-x: scroll !important;
     }
     table{
-        tr{
-            border-bottom: $borderBottom;
+        thead {
+            tr{
+                border-bottom: $borderBottom;
+                th{
+                    font-weight: 600;
+                    padding: 2em 1em;
+                }
+            }
         }
-        th{
-            font-weight: 600;
-            padding: 2em 1em;
+        tbody {
+            tr{
+                border-bottom: $borderBottomDashed;
+                &:last-child{
+                    border-bottom: none;
+                }
+                th{
+                    vertical-align: middle;
+                }
+                td{
+                    vertical-align: middle;
+                    padding: 1em 1em;
+                    .tenants-profile{
+                        img{
+                            width: 3rem;
+                            height: 3rem;
+                        }
+                    }
+                }
+            }
         }
-        td{
-            padding: 1em 1em;
+    }
+}
+}
+.text-sm-center{
+    @include for-mobile{
+        text-align: center !important;
+    }
+}
+.tenants-page-profile{
+    width: 7.5rem;
+    height: 7.5rem;
+}
+.tenant-tabs{
+    .ui.menu{
+        .active.item{
+            border-bottom: 2px solid $primaryLightColor !important;
         }
     }
 }

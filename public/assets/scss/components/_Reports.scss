@@ -1,0 +1,49 @@
+.reports-table-div{
+    .show-entry{
+        border: $borderBottom;
+        background-color: $textLightColor;
+    }
+    .ui.input{
+        input{
+            border: 1px solid $primaryLightColor !important;
+        }
+        i{
+            color: $primaryLightColor;
+            opacity: 1 !important;
+        }
+    }
+    .reportsTable{
+        @include for-tablet{
+            width: 100% !important;
+            overflow-x: scroll !important;
+        }
+        table{
+            thead {
+                tr{
+                    border-bottom: $borderBottom;
+                    th{
+                        font-weight: 600;
+                        padding: 2em 1em;
+                    }
+                }
+            }
+            tbody {
+                tr{
+                    border-bottom: $borderBottom;
+                    &:last-child{
+                        border-bottom: none;
+                    }
+                    td{
+                        vertical-align: middle;
+                        padding: 1em 1em;
+                        a{
+                            &:hover{
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
