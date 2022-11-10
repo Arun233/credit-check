@@ -21,7 +21,7 @@ export default function HeaderComponent(props) {
       props.width <980 &&   <Icon className='fs-4 ' onClick={(e)=>openSidebar(e)} name='bars'/> 
     }
 
-    {/* <div className='right menu d-inline-block float-right'>
+    <div className='right menu d-inline-block float-right'>
     <Dropdown icon={null} trigger={triggerDropdown}>
     <Dropdown.Menu>
       <Dropdown.Item className='d-flex'>
@@ -32,7 +32,7 @@ export default function HeaderComponent(props) {
     </Dropdown.Menu>
     </Dropdown>
 
-    </div> */}
+    </div>
     
    
     </div>
