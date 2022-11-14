@@ -55,6 +55,27 @@ export default function Integration() {
           <button onClick={()=>SetintegrationformShow(false)} className='border-0 bg-transparent cursor-pointer text-primary-light fs-6 fw-600  text-nowrap' ><img src='/assets/images/arroww.svg' className='mr-1' alt='arrow' width='25' />BACK</button>
         </div>
         <div className='ui form p-3'>
+          <div className='row'>
+            <div className='col-md-1 col-sm-12  mr-6'>
+           <span> Products</span>
+            </div>
+            <div className='col-md-10 col-sm-12 pl-2'>
+              < div className='row'>
+                <div className='col-md-4 col-sm-12'>
+                  <input type='checkbox' />
+                  Credit Check
+                </div>
+                <div className='col-md-4 col-sm-12'>
+                  <input type='checkbox' />
+                  E-Signature
+                </div>
+                <div className='col-md-4 col-sm-12'>
+                  <input type='checkbox' />
+                  BankID Authentication
+                </div>
+                </div>
+            </div>
+          </div>
           <div className='row my-2'>
           <div className='col-md-7 col-sm-12'>
             <div className='inline fields'>
