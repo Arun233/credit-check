@@ -63,6 +63,9 @@ p{
 .bg-gray-2{
     background-color:$graycolor-2 !important ;
 }
+.bg-light-purple{
+    background-color: $BgLightPurple !important;
+}
 // Boxshadow colors
 .shadow{
     box-shadow: $primaryShadow !important;
@@ -71,11 +74,23 @@ p{
     box-shadow: $secondaryShadow !important;
 }
 // Borders
+.border-primary{
+    border: 1px solid $primaryLightColor !important;
+}
+.border-dashed-purple{
+    border: 1px dashed $BorderPuprle !important;
+}
+.border{
+    border: 1px solid $Border !important;
+}
 .border-light-gray{
     border: $borderBottom !important;
 }
 .border-bottom{
     border-bottom: $borderBottom !important;
+}
+.border-bottom-white{
+    border-bottom: 1px solid $BorderWhite !important;
 }
 // Label colors
 .label-success{
@@ -356,7 +371,9 @@ vertical-align: super !important;
       margin-bottom: 0.5rem * $i !important;
   }
 
-
+  .mx-auto{
+    margin: 0 auto !important;
+  }
   // for border-radius
   .border-radius-#{$i*5}{
       border-radius: 5px  * $i !important;

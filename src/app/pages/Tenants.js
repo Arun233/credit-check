@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Dropdown, Pagination, Icon, Input } from 'semantic-ui-react';
+import WelcomePopup from '../components/WelcomePopup';
 import TenantsProfile from './TenantsProfile';
 
 export default function Tenants() {
@@ -202,9 +203,9 @@ export default function Tenants() {
                     {tenantsData.map((tenantsItem) => {
                       return (
                         <tr>
-                          <th scope="row" className='text-center'><input type="checkbox" onChange={() => toggleCheck(tenantsItem.tenantsChecked)}
+                          <td className='text-center'><input type="checkbox" onChange={() => toggleCheck(tenantsItem.tenantsChecked)}
                             checked={checked[tenantsItem.tenantsChecked]} />
-                          </th>
+                          </td>
                           <td className='text-center'>
                             <div className='d-flex justify-content-center align-items-start'>
                               <div className='tenants-profile'>
@@ -222,44 +223,6 @@ export default function Tenants() {
                         </tr>
                       )
                     })}
-                    {/* <tr>
-                      <td className='text-center'><input type="checkbox" onChange={() => toggleCheck("chk")}
-                        checked={checked["chk"]} />
-                      </td>
-                      <td className='text-center'>
-                        <div className='d-flex justify-content-center align-items-start'>
-                          <div className='tenants-profile'>
-                            <img src='/assets/images/post-tenant-img.png' alt='Profile' rounded />
-                          </div>
-                          <div className='ml-2 text-left'>
-                            <p className='fs-6 fw-500 cursor-pointer' onClick={() => setShowProfile(true)}>Alexendria Aliex</p>
-                            <p>Alex@gmail.com</p>
-                            <p>+91 79294548574</p>
-                          </div>
-                        </div>
-                      </td>
-                      <td className='text-center'><p>BankID</p></td>
-                      <td className='text-center'><label className='label-success'>Pass</label></td>
-                    </tr>
-                    <tr>
-                      <td className='text-center'><input type="checkbox" onChange={() => toggleCheck("chk1")}
-                        checked={checked["chk1"]} />
-                      </td>
-                      <td className='text-center'>
-                        <div className='d-flex justify-content-center align-items-start'>
-                          <div className='tenants-profile'>
-                            <img src='/assets/images/post-tenant-img.png' alt='Profile' rounded />
-                          </div>
-                          <div className='ml-2 text-left'>
-                            <p className='fs-6 fw-500 ' onClick={() => setShowProfile(true)}>Alexendria Aliex</p>
-                            <p>Alex@gmail.com</p>
-                            <p>+91 79294548574</p>
-                          </div>
-                        </div>
-                      </td>
-                      <td className='text-center'><p>BankID On Mobile</p></td>
-                      <td className='text-center'><label className='label-danger'>Fail</label></td>
-                    </tr> */}
                   </tbody>
                 </table>
               </div>
@@ -276,6 +239,7 @@ export default function Tenants() {
         {showprofile && (
           <TenantsProfile onProfile={() => setShowProfile(false)} />
         )}
+        <WelcomePopup />
       </div>
     </div>
   )

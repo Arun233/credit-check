@@ -1,6 +1,7 @@
 import React from 'react'
 import { Dropdown, Pagination, Input, Icon } from 'semantic-ui-react';
 import SemanticDatepicker from 'react-semantic-ui-datepickers';
+import WelcomePopup from '../components/WelcomePopup';
 
 export default function Reports() {
   const reportsData = [
@@ -14,19 +15,19 @@ export default function Reports() {
       email: 'Karthick@gmail.com',
       mobileNumber: '98657634354',
       authenticationMethod: 'BankID',
-  },
-  {
-    id: '2',
-    location: 'Woodland',
-    buildingName: 'Alpha',
-    unitNumber: '24',
-    tenantName: 'Barath',
-    tenantType: 'Personal User',
-    email: 'Karthick@gmail.com',
-    mobileNumber: '98657634354',
-    authenticationMethod: 'BankID'
-}
-]
+    },
+    {
+      id: '2',
+      location: 'Woodland',
+      buildingName: 'Alpha',
+      unitNumber: '24',
+      tenantName: 'Barath',
+      tenantType: 'Personal User',
+      email: 'Karthick@gmail.com',
+      mobileNumber: '98657634354',
+      authenticationMethod: 'BankID'
+    }
+  ]
   const tenantLocationOption = [
     {
       key: 1,
@@ -104,7 +105,7 @@ export default function Reports() {
   ]
   return (
     <div className='py-2'>
-      {/* <div className='ui container'>
+      <div className='ui container'>
         <h2 className='text-white fs-6 mb-4 fw-300 d-flex align-items-center'>
           Reports
           <span className='fs-8 PageSub-title px-1 ml-1'>
@@ -169,66 +170,67 @@ export default function Reports() {
             </div>
           </div>
           <div className='reports-table-div'>
-              <div className='row pt-4 pb-2'>
-                <div className='col-lg-6 col-md-6 col-sm-12 text-left text-sm-center mb-1'>
-                  <label className='show-entry py-1 px-1 border-radius-5 d-inline-block'>
-                    Show
-                    <select className='border-0 cursor-pointer'>
-                      <option value="10">10</option>
-                      <option value="25">25</option>
-                      <option value="50">50</option>
-                    </select>
-                    enteries
-                  </label>
-                </div>
-                <div className='col-lg-6 col-md-6 col-sm-12 text-sm-center text-right mb-1'>
+            <div className='row pt-4 pb-2'>
+              <div className='col-lg-6 col-md-6 col-sm-12 text-left text-sm-center mb-1'>
+                <label className='show-entry py-1 px-1 border-radius-5 d-inline-block'>
+                  Show
+                  <select className='border-0 cursor-pointer'>
+                    <option value="10">10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                  </select>
+                  enteries
+                </label>
+              </div>
+              <div className='col-lg-6 col-md-6 col-sm-12 text-sm-center text-right mb-1'>
+                <div>
                   <div>
-                    <div>
-                      <Input className='w-75' iconPosition='left' icon='search' placeholder='Search...' />
-                    </div>
+                    <Input className='w-75' iconPosition='left' icon='search' placeholder='Search...' />
                   </div>
                 </div>
               </div>
-              <div className='bg-white reportsTable shadow-sm border-radius-10'>
-                <table className='w-100'>
-                  <thead>
-                    <tr>
-                      <th>LOCATION</th>
-                      <th>BUILDING NAME</th>
-                      <th>UNIT#</th>
-                      <th>TENANT NAME & TYPE</th>
-                      <th>EMAIL</th>
-                      <th>MOBILE NUMBER</th>
-                      <th>AUTHENTICATION METHOD</th>
-                    </tr>
-                  </thead>
+            </div>
+            <div className='bg-white reportsTable shadow-sm border-radius-10'>
+              <table className='w-100'>
+                <thead>
+                  <tr>
+                    <th>LOCATION</th>
+                    <th>BUILDING NAME</th>
+                    <th>UNIT#</th>
+                    <th>TENANT NAME & TYPE</th>
+                    <th>EMAIL</th>
+                    <th>MOBILE NUMBER</th>
+                    <th>AUTHENTICATION METHOD</th>
+                  </tr>
+                </thead>
                 <tbody>
                   {reportsData.map((reportItem) => {
                     return (
                       <tr>
-                      <td className='text-center'><p>{reportItem.location}</p></td>
-                      <td className='text-center'><p>{reportItem.buildingName}</p></td>
-                      <td className='text-center'><a className='text-decoration-underline text-primary' href="/">{reportItem.unitNumber}</a></td>
-                      <td className='text-center'><p>{reportItem.tenantName}</p><p className='text-primary'>{reportItem.tenantType}</p></td>
-                      <td className='text-center'><p>{reportItem.email}</p></td>
-                      <td className='text-center'><p>{reportItem.mobileNumber}</p></td>
-                      <td className='text-center'><p>{reportItem.authenticationMethod}</p></td>
+                        <td className='text-center'><p>{reportItem.location}</p></td>
+                        <td className='text-center'><p>{reportItem.buildingName}</p></td>
+                        <td className='text-center'><a className='text-decoration-underline text-primary' href="/">{reportItem.unitNumber}</a></td>
+                        <td className='text-center'><p>{reportItem.tenantName}</p><p className='text-primary'>{reportItem.tenantType}</p></td>
+                        <td className='text-center'><p>{reportItem.email}</p></td>
+                        <td className='text-center'><p>{reportItem.mobileNumber}</p></td>
+                        <td className='text-center'><p>{reportItem.authenticationMethod}</p></td>
                       </tr>
                     )
                   })}
-                  </tbody>
-                </table>
-              </div>
-              <div className='pagination-div mt-2 mb-3 text-center'>
-                <Pagination ellipsisItem={{ content: <Icon name='ellipsis horizontal' />, icon: true, }}
-                  firstItem={{ content: <Icon name='angle double left' />, icon: true }}
-                  lastItem={{ content: <Icon name='angle double right' />, icon: true }}
-                  prevItem={{ content: <Icon name='angle left' />, icon: true }}
-                  nextItem={{ content: <Icon name='angle right' />, icon: true }} defaultActivePage={1} totalPages={10} />
-              </div>
+                </tbody>
+              </table>
             </div>
+            <div className='pagination-div mt-2 mb-3 text-center'>
+              <Pagination ellipsisItem={{ content: <Icon name='ellipsis horizontal' />, icon: true, }}
+                firstItem={{ content: <Icon name='angle double left' />, icon: true }}
+                lastItem={{ content: <Icon name='angle double right' />, icon: true }}
+                prevItem={{ content: <Icon name='angle left' />, icon: true }}
+                nextItem={{ content: <Icon name='angle right' />, icon: true }} defaultActivePage={1} totalPages={10} />
+            </div>
+          </div>
         </div>
-      </div> */}
+        <WelcomePopup />
+      </div>
     </div>
   )
 }
