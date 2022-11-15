@@ -1,6 +1,16 @@
 // for semantic date picker
 .datePicker .field{
     display: block !important;
+    .field{
+        margin-bottom: 0 !important;
+        .ui.input{
+            input{
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+        }
+    }
     i{
         color: $primaryColor;
         opacity: 1 !important;
@@ -10,16 +20,15 @@
  #sidebar{
     width: 170px !important;
     z-index: 9999 !important;
-
-    // .active.item{
-    //     background: transparent !important;
-    //     color: $primaryColor !important;
-    //     svg{
-    //         path{
-    //             fill: $primaryColor !important;
-    //         }
-    //     }
-    // }
+    .active.item{
+        background: transparent !important;
+        color: $primaryColor !important;
+        svg{
+            path{
+                fill: $primaryColor !important;
+            }
+        }
+    }
 }
 
 #mainContent{
@@ -77,6 +86,9 @@
         }
     }
 }
+input[type=checkbox] {
+    accent-color: $primaryColor  !important;
+  }
 @include for-mobile{
     #SignicatINtegrationTable{
         min-width: 770px !important;

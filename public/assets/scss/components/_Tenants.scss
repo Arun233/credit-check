@@ -1,4 +1,3 @@
-
 .tenants-table-div{
     .show-entry{
         border: $borderBottom;
@@ -33,9 +32,6 @@
                 border-bottom: $borderBottomDashed;
                 &:last-child{
                     border-bottom: none;
-                }
-                th{
-                    vertical-align: middle;
                 }
                 td{
                     vertical-align: middle;

@@ -1,7 +1,12 @@
 import React from 'react'
+import WelcomePopup from '../components/WelcomePopup'
 
-export default function Dashboard() {
+
+export default function Dashboard(props) {
   return (
-    <div>Dashboard</div>
+    <div>Dashboard
+
+      <WelcomePopup />
+    </div>
   )
 }
