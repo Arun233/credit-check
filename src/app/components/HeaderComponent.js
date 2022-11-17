@@ -18,7 +18,7 @@ export default function HeaderComponent(props) {
   )
   return (
     <>
-      <div className='ui secondary pointing menu py-2 bg-white d-block border-bottom-white w-100 px-2 bg-primary'>
+      <div className='ui secondary position-fixed t-0 l-0 z-index-1 pointing menu py-2 bg-white d-block border-bottom-white w-100 px-2 bg-primary'>
         {
           props.width < 980 && <Icon className='fs-4 ' onClick={(e) => openSidebar(e)} name='bars text-white mt-1' />
         }

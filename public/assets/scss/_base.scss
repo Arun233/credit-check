@@ -99,6 +99,18 @@ p{
 .label-danger{
     color: $redColor !important;
 }
+.lbl-success{
+    color: $LblSuccessTextColor !important;
+    background-color: $LblSuccessBgColor !important;
+    padding: 0.3rem 0.4rem !important;
+    border-radius: 3px !important;
+}
+.lbl-danger{
+    color: $LblDangerTextColor !important;
+    background-color: $LblDangerBgColor !important;
+    padding: 0.3rem 0.4rem !important;
+    border-radius: 3px !important;
+}
 // Word
 .word-wrap{
     word-break: break-all;
@@ -404,7 +416,11 @@ vertical-align: super !important;
     .w-#{$i*5}{
         width: 5% * $i !important;
     }
-
+}
+@for $i from 1 through 20{
+    .mh-#{$i*5}{
+       min-height: 5% * $i !important;
+    }
 }
 @for $i from 0 through 6{
     @include for-tablet{

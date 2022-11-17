@@ -14,7 +14,7 @@ export default function Settings() {
           </span>
         </h2>
         <div className='bg-white shadow border-radius-15'>
-          <h5 className='border-bottom py-3 px-3 fs-6 fw-500 text-primary-light'>BANKID AUTHENTICATION REPORT</h5>
+          <h5 className='border-bottom py-3 px-3 fs-6 fw-500 text-primary-light'>BANKID AUTHENTICATION</h5>
           <div className='px-3 py-3'>
             <Checkbox className='mb-3' toggle label='Enable BankID Authentication' />
             <div className="d-flex justify-content-start mb-3">
