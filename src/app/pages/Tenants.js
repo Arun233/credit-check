@@ -12,7 +12,7 @@ export default function Tenants() {
       tenantEmail: 'Alex@gmail.com',
       tenantNumber: '+91 79294548574',
       authenticationMethod: 'BankID',
-      authenticationStatus: 'Pass'
+      authenticationStatus: 'Success'
     },
     {
       tenantsChecked: 'chk1',
@@ -21,7 +21,7 @@ export default function Tenants() {
       tenantEmail: 'Alex@gmail.com',
       tenantNumber: '+91 79294548574',
       authenticationMethod: 'BankID On Mobile',
-      authenticationStatus: 'Fail'
+      authenticationStatus: 'Failed'
     }
   ]
   const [showprofile, setShowProfile] = useState(false);
@@ -80,25 +80,8 @@ export default function Tenants() {
     },
     {
       key: 2,
-      text: 'In-Active',
-      value: 'In-Active',
-    },
-  ]
-  const authenticationMethodOption = [
-    {
-      key: 1,
-      text: 'All',
-      value: 'All'
-    },
-    {
-      key: 2,
-      text: 'Norwegian BankID',
-      value: 'Norwegian BankID',
-    },
-    {
-      key: 3,
-      text: 'BankID On Mobile',
-      value: 'BankID On Mobile',
+      text: 'Inactive',
+      value: 'Inactive',
     },
   ]
   const authenticationStatusOption = [
@@ -149,18 +132,13 @@ export default function Tenants() {
                     </div>
                     <div className='col-lg-3 col-md-6 col-sm-12 px-2 mb-2'>
                       <div class="field">
-                        <label className='fw-500 mb-1'>Authentication Method</label>
-                        <Dropdown placeholder='Authentication Method' clearable fluid search floating selection options={authenticationMethodOption} />
-                      </div>
-                    </div>
-                    <div className='col-lg-3 col-md-6 col-sm-12 px-2 mb-2'>
-                      <div class="field">
                         <label className='fw-500 mb-1'>Authentication Status</label>
                         <Dropdown placeholder='Authentication Status' clearable fluid search floating selection options={authenticationStatusOption} />
                       </div>
                     </div>
-                    <div className='col-lg-4 col-md-6 col-sm-12 px-2'>
-                      <button class="ui button bg-primary text-white px-4 fw-400" type="submit">Apply</button>
+                    <div className='col-lg-3 col-md-6 col-sm-12 px-2'>
+                      <label className='fw-500 mb-1 d-block invisible'>Status</label>
+                      <button class="ui button bg-primary text-white px-4 fs-7 fw-400" type="submit">Apply</button>
                     </div>
                   </div>
                 </form>
@@ -176,7 +154,7 @@ export default function Tenants() {
                       <option value="25">25</option>
                       <option value="50">50</option>
                     </select>
-                    enteries
+                    entries
                   </label>
                 </div>
                 <div className='col-lg-6 col-md-6 col-sm-12 text-sm-center text-right mb-1'>
@@ -223,7 +201,7 @@ export default function Tenants() {
                                 </div>
                               </td>
                               <td className='text-center'><p>{tenantsItem.authenticationMethod}</p></td>
-                              <td className='text-center'><label className={`${tenantsItem.authenticationStatus === 'Pass' ? "label-success" : "label-danger"}`}>{tenantsItem.authenticationStatus}</label></td>
+                              <td className='text-center'><label className={`${tenantsItem.authenticationStatus === 'Success' ? "label-success" : "label-danger"}`}>{tenantsItem.authenticationStatus}</label></td>
                             </tr>
                           )
                         })}

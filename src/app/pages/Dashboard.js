@@ -45,7 +45,7 @@ export default function Dashboard(props) {
   return (
     <div className='py-2'>
       <div className='ui container'>
-        <h2 className='text-white fs-6 mb-4 fw-300 d-flex align-items-center'><span className='fs-8'><img height='17' width='17' src='/assets/images/Integration.svg' alt='Filter' /><span className='veritical-align-text-top pl-1 fs-7'>Welcome To Dashboard</span></span></h2>
+        <h2 className='text-white fs-6 mb-4 fw-300 d-flex align-items-center'><span className='fs-8'><img height='17' width='17' src='/assets/images/dashboard.svg' alt='Filter' /><span className='veritical-align-text-top pl-1 fs-7'>Welcome To Dashboard</span></span></h2>
         <div className='widgets'>
           <div className='row'>
             {WidgetData.map((data) => (

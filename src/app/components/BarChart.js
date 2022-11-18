@@ -9,7 +9,6 @@ import {
   Legend,
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
-import faker from 'faker';
 
 ChartJS.register(
   CategoryScale,
@@ -30,20 +29,23 @@ export const options = {
   },
 };
 
-const labels = ['May', 'June', 'July', 'Aug', 'Sep'];
-
 export const data = {
-  labels,
+  labels: ['May', 'June', 'July', 'Aug', 'Sep'],
   datasets: [
     {
       label: 'Success',
-      data: labels.map(() => faker.datatype.number({ min: 0, max: 60 })),
+      data: [60, 49, 30, 11, 56],
       backgroundColor: '#2396C1',
     },
     {
       label: 'Failed',
-      data: labels.map(() => faker.datatype.number({ min: 0, max: 60 })),
+      data: [50, 39, 20, 21, 46],
       backgroundColor: '#FE738B',
+    },
+    {
+      label: 'Locked Out Events',
+      data: [40, 29, 10, 31, 26],
+      backgroundColor: '#888B8A',
     },
   ],
 };

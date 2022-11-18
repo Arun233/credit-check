@@ -27,7 +27,7 @@ export default function Settings() {
                   <path id="Path_15053" data-name="Path 15053" d="M16.505,22a2.005,2.005,0,1,0,2.005,2.005A2.005,2.005,0,0,0,16.505,22Z" transform="translate(-14.5 -2.417)" fill="#ffc700" />
                 </g>
               </svg>
-                <span className="ml-1 fw-500">Once this feature is enabled, customers can able to login with BankID only .</span></p>
+                <span className="ml-1 fw-500">Once this feature is enabled, tenants can move-in to facility after the BankID authentication.</span></p>
             </div>
           </div>
         </div>

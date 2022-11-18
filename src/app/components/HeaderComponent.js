@@ -41,7 +41,7 @@ export default function HeaderComponent(props) {
       >
         <Modal.Header className='text-center'>CONFIRM LOG-OUT</Modal.Header>
         <Modal.Content className='text-center'>
-          <p>Are you sure want to confirm logout</p>
+          <p>Are you sure you want to log out?</p>
         </Modal.Content>
         <Modal.Actions className='text-center'>
           <button className='ui button border-radius-0 bg-gray-2 text-dark fw-400' onClick={() => SetLogoutModal({ open: false })}>CANCEL</button>
