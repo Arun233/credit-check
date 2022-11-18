@@ -65,8 +65,8 @@ export default function Reports() {
     },
     {
       key: 2,
-      text: 'In-Active',
-      value: 'In-Active',
+      text: 'Inactive',
+      value: 'Inactive',
     }
   ]
   const authenticationStatusOption = [
@@ -77,30 +77,13 @@ export default function Reports() {
     },
     {
       key: 2,
-      text: 'Authenticated',
-      value: 'Authenticated',
+      text: 'Success',
+      value: 'Success',
     },
     {
       key: 3,
-      text: 'Not Authenticated',
-      value: 'Not Authenticated',
-    },
-  ]
-  const authenticationMethodOption = [
-    {
-      key: 1,
-      text: 'All',
-      value: 'All'
-    },
-    {
-      key: 2,
-      text: 'Norwegian BankID',
-      value: 'Norwegian BankID',
-    },
-    {
-      key: 3,
-      text: 'BankID On Mobile',
-      value: 'BankID On Mobile',
+      text: 'Failed',
+      value: 'Failed',
     },
   ]
   return (
@@ -144,12 +127,6 @@ export default function Reports() {
                     </div>
                   </div>
                   <div className='col-lg-3 col-md-6 col-sm-12 px-2 mb-2'>
-                    <div class="field">
-                      <label className='fw-500 mb-1'>Authenticated with</label>
-                      <Dropdown placeholder='Authenticated with' clearable fluid search floating selection options={authenticationMethodOption} />
-                    </div>
-                  </div>
-                  <div className='col-lg-3 col-md-6 col-sm-12 px-2 mb-2'>
                     <div class="field datePicker">
                       <label className='fw-500 mb-1'>From Date</label>
                       <SemanticDatepicker placeholder='Select From Date' className='w-100' />
@@ -163,7 +140,7 @@ export default function Reports() {
                   </div>
                   <div className='col-lg-3 col-md-6 col-sm-12 px-2'>
                     <label className='fs-7 fw-400 mb-1 d-block invisible'>Get Report</label>
-                    <button class="ui button bg-primary text-white fw-400" type="submit">Get Report</button>
+                    <button class="ui button bg-primary text-white fs-7 fw-400" type="submit">Get Report</button>
                   </div>
                 </div>
               </form>
@@ -179,7 +156,7 @@ export default function Reports() {
                     <option value="25">25</option>
                     <option value="50">50</option>
                   </select>
-                  enteries
+                  entries
                 </label>
               </div>
               <div className='col-lg-6 col-md-6 col-sm-12 text-sm-center text-right mb-1'>

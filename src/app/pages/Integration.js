@@ -200,7 +200,7 @@ export default function Integration() {
                 </div>
               </div>
               <div className='field'>
-                <label className='d-block'>Reason For Deactivation<i className='text-red'>*</i></label>
+                <label className='d-block'>Reason for deactivation<i className='text-red'>*</i></label>
                 <textarea rows={7} className="w-100 border p-1"></textarea>
               </div>
             </div>
