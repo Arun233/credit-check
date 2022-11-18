@@ -21,7 +21,7 @@ function App() {
       <SidebarComponent width={mobileWidth} sidebar={sidebar} showSidebar={ShowSidebar} />
       <div className={` pusher ${mobileWidth > 980 && 'pusher-desktop '} `} id='mainContent'>
         <HeaderComponent width={mobileWidth} sidebar={sidebar} showSidebar={ShowSidebar} />
-        <div className=''>
+        <div className='main-wrapper'>
           <Routes>
             <Route path='/' element={<Dashboard />} />
             <Route path='/tenants' element={<Tenants />} />

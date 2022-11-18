@@ -121,43 +121,43 @@ export default function Reports() {
                 <div className='row'>
                   <div className='col-lg-3 col-md-6 col-sm-12 px-2 mb-2 mb-2'>
                     <div class="field">
-                      <label className='fs-7 fw-400 mb-1'>Select Location</label>
+                      <label className='fw-500 mb-1'>Select Location</label>
                       <Dropdown placeholder='Select Location' clearable fluid search floating selection options={tenantLocationOption} />
                     </div>
                   </div>
                   <div className='col-lg-3 col-md-6 col-sm-12 px-2 mb-2'>
                     <div class="field">
-                      <label className='fs-7 fw-400 mb-1'>Select Building</label>
+                      <label className='fw-500 mb-1'>Select Building</label>
                       <Dropdown placeholder='Select Building' clearable fluid search floating selection options={tenantBuildingOption} />
                     </div>
                   </div>
                   <div className='col-lg-3 col-md-6 col-sm-12 px-2 mb-2'>
                     <div class="field">
-                      <label className='fs-7 fw-400 mb-1'>Tenant Type</label>
+                      <label className='fw-500 mb-1'>Tenant Type</label>
                       <Dropdown placeholder='Tenant Type' clearable fluid search floating selection options={tenantTypeOption} />
                     </div>
                   </div>
                   <div className='col-lg-3 col-md-6 col-sm-12 px-2 mb-2'>
                     <div class="field">
-                      <label className='fs-7 fw-400 mb-1'>Authentication Status</label>
+                      <label className='fw-500 mb-1'>Authentication Status</label>
                       <Dropdown placeholder='Authentication Status' clearable fluid search floating selection options={authenticationStatusOption} />
                     </div>
                   </div>
                   <div className='col-lg-3 col-md-6 col-sm-12 px-2 mb-2'>
                     <div class="field">
-                      <label className='fs-7 fw-400 mb-1'>Authenticated with</label>
+                      <label className='fw-500 mb-1'>Authenticated with</label>
                       <Dropdown placeholder='Authenticated with' clearable fluid search floating selection options={authenticationMethodOption} />
                     </div>
                   </div>
                   <div className='col-lg-3 col-md-6 col-sm-12 px-2 mb-2'>
                     <div class="field datePicker">
-                      <label className='fs-7 fw-400 mb-1'>From Date</label>
+                      <label className='fw-500 mb-1'>From Date</label>
                       <SemanticDatepicker placeholder='Select From Date' className='w-100' />
                     </div>
                   </div>
                   <div className='col-lg-3 col-md-6 col-sm-12 px-2 mb-2'>
                     <div class="field datePicker">
-                      <label className='fs-7 fw-400 mb-1'>To Date</label>
+                      <label className='fw-500 mb-1'>To Date</label>
                       <SemanticDatepicker placeholder='Select To Date' className='w-100' />
                     </div>
                   </div>
@@ -190,8 +190,9 @@ export default function Reports() {
                 </div>
               </div>
             </div>
-            <div className='bg-white reportsTable shadow-sm border-radius-10'>
-              <table className='w-100'>
+            <div className='reportsTable-content bg-white shadow-sm border-radius-10 overflow-x-auto w-100'>
+            <div className='reportsTable'>
+              <table className='w-100 table-layout-fixed'>
                 <thead>
                   <tr>
                     <th>LOCATION</th>
@@ -203,22 +204,27 @@ export default function Reports() {
                     <th>AUTHENTICATION METHOD</th>
                   </tr>
                 </thead>
-                <tbody>
-                  {reportsData.map((reportItem) => {
-                    return (
-                      <tr>
-                        <td className='text-center'><p>{reportItem.location}</p></td>
-                        <td className='text-center'><p>{reportItem.buildingName}</p></td>
-                        <td className='text-center'><a className='text-decoration-underline text-primary' href="/">{reportItem.unitNumber}</a></td>
-                        <td className='text-center'><p>{reportItem.tenantName}</p><p className='text-primary'>{reportItem.tenantType}</p></td>
-                        <td className='text-center'><p>{reportItem.email}</p></td>
-                        <td className='text-center'><p>{reportItem.mobileNumber}</p></td>
-                        <td className='text-center'><p>{reportItem.authenticationMethod}</p></td>
-                      </tr>
-                    )
-                  })}
-                </tbody>
               </table>
+              <div className='ScrollBody overflow-y-auto'>
+                <table className='w-100 table-layout-fixed'>
+                  <tbody>
+                    {reportsData.map((reportItem) => {
+                      return (
+                        <tr>
+                          <td className='text-center'><p>{reportItem.location}</p></td>
+                          <td className='text-center'><p>{reportItem.buildingName}</p></td>
+                          <td className='text-center'><a className='text-decoration-underline text-primary' href="/">{reportItem.unitNumber}</a></td>
+                          <td className='text-center'><p>{reportItem.tenantName}</p><p className='text-primary'>{reportItem.tenantType}</p></td>
+                          <td className='text-center'><p>{reportItem.email}</p></td>
+                          <td className='text-center'><p>{reportItem.mobileNumber}</p></td>
+                          <td className='text-center'><p>{reportItem.authenticationMethod}</p></td>
+                        </tr>
+                      )
+                    })}
+                  </tbody>
+                </table>
+              </div>
+            </div>
             </div>
             <div className='pagination-div mt-2 mb-3 text-center'>
               <Pagination ellipsisItem={{ content: <Icon name='ellipsis horizontal' />, icon: true, }}

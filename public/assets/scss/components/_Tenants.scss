@@ -1,3 +1,19 @@
+.tenants-filter-div{
+    .field{
+        label{
+            font-size: 0.8rem !important;
+        }
+    }
+    .divider.default.text {
+        font-size: 0.8rem !important;
+    }
+    .divider.text {
+        font-size: 0.8rem !important;
+    }
+    .item{
+        font-size: 0.8rem !important;
+    }
+}
 .tenants-table-div{
     .show-entry{
         border: $borderBottom;
@@ -13,10 +29,7 @@
         }
     }
 .tenantsTable{
-    @include for-mobile{
-        width: 100% !important;
-        overflow-x: scroll !important;
-    }
+    min-width: 800px;
     table{
         thead {
             tr{
@@ -24,6 +37,7 @@
                 th{
                     font-weight: 600;
                     padding: 2em 1em;
+                    vertical-align: middle;
                 }
             }
         }

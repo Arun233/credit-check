@@ -25,8 +25,8 @@ export default function SidebarComponent(props) {
             </svg>
           </div>
         }
-        <div>
-          <img className='w-100' src="/assets/images/verifier-logo.jpg" alt='Verifier Logo' />
+        <div className='logo'>
+          <a href='/'><img className='w-100' src="/assets/images/verifier-logo.jpg" alt='Verifier Logo' /></a>
         </div>
         <NavLink to={'/'} className='item disablBefore fs-7 my-1 text-gray fw-600 cursor-pointer' >
           <svg id="dashboard" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 23.086 23.082">

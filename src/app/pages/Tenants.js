@@ -22,7 +22,7 @@ export default function Tenants() {
       tenantNumber: '+91 79294548574',
       authenticationMethod: 'BankID On Mobile',
       authenticationStatus: 'Fail'
-    },
+    }
   ]
   const [showprofile, setShowProfile] = useState(false);
   const [checkedAll, setCheckedAll] = useState(false);
@@ -137,30 +137,30 @@ export default function Tenants() {
                   <div className='row'>
                     <div className='col-lg-3 col-md-6 col-sm-12 px-2 mb-2 mb-2'>
                       <div class="field">
-                        <label className='fs-7 fw-400 mb-1'>Select Location</label>
+                        <label className='fw-500 mb-1'>Select Location</label>
                         <Dropdown placeholder='Select Location' clearable fluid search floating selection options={tenantLocationOption} />
                       </div>
                     </div>
                     <div className='col-lg-3 col-md-6 col-sm-12 px-2 mb-2'>
                       <div class="field">
-                        <label className='fs-7 fw-400 mb-1'>Tenant Status</label>
+                        <label className='fw-500 mb-1'>Tenant Status</label>
                         <Dropdown placeholder='Tenant Status' clearable fluid search floating selection options={tenantStatusOption} />
                       </div>
                     </div>
                     <div className='col-lg-3 col-md-6 col-sm-12 px-2 mb-2'>
                       <div class="field">
-                        <label className='fs-7 fw-400 mb-1'>Authentication Method</label>
+                        <label className='fw-500 mb-1'>Authentication Method</label>
                         <Dropdown placeholder='Authentication Method' clearable fluid search floating selection options={authenticationMethodOption} />
                       </div>
                     </div>
                     <div className='col-lg-3 col-md-6 col-sm-12 px-2 mb-2'>
                       <div class="field">
-                        <label className='fs-7 fw-400 mb-1'>Authentication Status</label>
+                        <label className='fw-500 mb-1'>Authentication Status</label>
                         <Dropdown placeholder='Authentication Status' clearable fluid search floating selection options={authenticationStatusOption} />
                       </div>
                     </div>
                     <div className='col-lg-4 col-md-6 col-sm-12 px-2'>
-                      <button class="ui button bg-primary text-white fw-400" type="submit">Submit</button>
+                      <button class="ui button bg-primary text-white px-4 fw-400" type="submit">Apply</button>
                     </div>
                   </div>
                 </form>
@@ -187,44 +187,50 @@ export default function Tenants() {
                   </div>
                 </div>
               </div>
-              <div className='bg-white tenantsTable shadow-sm border-radius-10'>
-                <table className='w-100'>
-                  <thead>
-                    <tr>
-                      <th className='text-center'>
-                        <input type="checkbox" onChange={(event) => selectAll(event.target.checked)} checked={checkedAll} />
-                      </th>
-                      <th>CUSTOMERS</th>
-                      <th>AUTHENTICATION METHOD</th>
-                      <th>AUTHENTICATION STATUS</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {tenantsData.map((tenantsItem) => {
-                      return (
-                        <tr>
-                          <td className='text-center'><input type="checkbox" onChange={() => toggleCheck(tenantsItem.tenantsChecked)}
-                            checked={checked[tenantsItem.tenantsChecked]} />
-                          </td>
-                          <td className='text-center'>
-                            <div className='d-flex justify-content-center align-items-start'>
-                              <div className='tenants-profile'>
-                                <img src={tenantsItem.profileImage} alt='Profile' rounded />
-                              </div>
-                              <div className='ml-2 text-left'>
-                                <p className='fs-6 fw-500 cursor-pointer' onClick={() => setShowProfile(true)}>{tenantsItem.tenantName}</p>
-                                <p>{tenantsItem.tenantEmail}</p>
-                                <p>{tenantsItem.tenantNumber}</p>
-                              </div>
-                            </div>
-                          </td>
-                          <td className='text-center'><p>{tenantsItem.authenticationMethod}</p></td>
-                          <td className='text-center'><label className={`${tenantsItem.authenticationStatus === 'Pass' ? "label-success" : "label-danger"}`}>{tenantsItem.authenticationStatus}</label></td>
-                        </tr>
-                      )
-                    })}
-                  </tbody>
-                </table>
+              <div className='tenantsTable-content bg-white shadow-sm border-radius-10 overflow-x-auto w-100'>
+                <div className='tenantsTable'>
+                  <table className='w-100 table-layout-fixed'>
+                    <thead>
+                      <tr>
+                        <th className='text-center'>
+                          <input type="checkbox" onChange={(event) => selectAll(event.target.checked)} checked={checkedAll} />
+                        </th>
+                        <th>CUSTOMERS</th>
+                        <th>AUTHENTICATION METHOD</th>
+                        <th>AUTHENTICATION STATUS</th>
+                      </tr>
+                    </thead>
+                  </table>
+                  <div className='ScrollBody overflow-y-auto'>
+                    <table className='w-100 table-layout-fixed'>
+                      <tbody>
+                        {tenantsData.map((tenantsItem) => {
+                          return (
+                            <tr>
+                              <td className='text-center'><input type="checkbox" onChange={() => toggleCheck(tenantsItem.tenantsChecked)}
+                                checked={checked[tenantsItem.tenantsChecked]} />
+                              </td>
+                              <td className='text-center'>
+                                <div className='d-flex justify-content-center align-items-start'>
+                                  <div className='tenants-profile'>
+                                    <img src={tenantsItem.profileImage} alt='Profile' rounded />
+                                  </div>
+                                  <div className='ml-2 text-left'>
+                                    <p className='fs-6 fw-500 cursor-pointer' onClick={() => setShowProfile(true)}>{tenantsItem.tenantName}</p>
+                                    <p>{tenantsItem.tenantEmail}</p>
+                                    <p>{tenantsItem.tenantNumber}</p>
+                                  </div>
+                                </div>
+                              </td>
+                              <td className='text-center'><p>{tenantsItem.authenticationMethod}</p></td>
+                              <td className='text-center'><label className={`${tenantsItem.authenticationStatus === 'Pass' ? "label-success" : "label-danger"}`}>{tenantsItem.authenticationStatus}</label></td>
+                            </tr>
+                          )
+                        })}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
               </div>
               <div className='pagination-div mt-2 mb-3 text-center'>
                 <Pagination ellipsisItem={{ content: <Icon name='ellipsis horizontal' />, icon: true, }}
